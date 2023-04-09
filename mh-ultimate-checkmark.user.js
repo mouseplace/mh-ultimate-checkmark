@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ MouseHunt - Ultimate Checkmark (beta)
-// @version      1.1.0
+// @version      1.0.1
 // @description  Track your progress towards the "Ultimate Checkmark".
 // @license      MIT
 // @author       bradp
@@ -9,7 +9,7 @@
 // @icon         https://i.mouse.rip/mouse.png
 // @grant        none
 // @run-at       document-end
-// @require      https://cdn.jsdelivr.net/npm/mousehunt-utils@1.2.0/mousehunt-utils.js
+// @require      https://cdn.jsdelivr.net/npm/mousehunt-utils@1.5.2/mousehunt-utils.js
 // ==/UserScript==
 
 (function () {
@@ -491,10 +491,10 @@
     setTimeout(addAirships, 750);
 
     addStyles(`.hunterProfileItemsView-categoryContent[data-category="plankrun"] .hunterProfileItemsView-categoryContent-item.uncollected,
-		.hunterProfileItemsView-categoryContent[data-category="airships"] .hunterProfileItemsView-categoryContent-item.uncollected,
-		.hunterProfileItemsView-categoryContent[data-category="currency"] .hunterProfileItemsView-categoryContent-item.uncollected {
-			-webkit-filter: grayscale(100%);
-			        filter: grayscale(100%);
-		}`);
+    .hunterProfileItemsView-categoryContent[data-category="airships"] .hunterProfileItemsView-categoryContent-item.uncollected,
+    .hunterProfileItemsView-categoryContent[data-category="currency"] .hunterProfileItemsView-categoryContent-item.uncollected {
+      filter: grayscale(100%);
+    }
+    `);
   }
 }());

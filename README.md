@@ -1,6 +1,6 @@
 # 🐭️ Mousehunt - Ultimate Checkmark
 
-A Userscript for [MouseHunt](https://mousehuntgame.com) that adds more things to ✅️ to the items view.
+A Userscript for [MouseHunt](https://mousehuntgame.com) that adds more things to ✅️ on the items view.
 
 ## Installation
 
