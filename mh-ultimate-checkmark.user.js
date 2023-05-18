@@ -313,7 +313,7 @@
       { item_id: '1762', type: 'living_garden_treasure_chest_f_convertible', name: 'Living Garden Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/8daa67ef7fba125eaa0b098d682bb7a8.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/f23dc73c1dd1f563c602f477c0a480ed.jpg?cv=2' },
       { item_id: '2375', type: 'chrome_elite_treasure_chest_convertible', name: 'Elite Chrome Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/043d5183550d5b643f3ebdda5ef3a7e0.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/313df1e311b4f82a4bc06e488c73a8d3.jpg?cv=2' },
       { item_id: '1774', type: 'rare_gnawnia_treasure_chest_convertible', name: 'Rare Gnawnia Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/23ba20f4e3efa129697f87b3fd776500.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/23e02c08a04bf8b1b8a724b36c1056a0.jpg?cv=2' },
-      // { "item_id": "1975", "type": "rare_giant_rainbow_treasure_chest_convertible", "name": "Rare Giant Rainbow Treasure Chest", "thumbnail": "https://www.mousehuntgame.com/images/items/convertibles/bcefcda9a9ab1b732c4b56cf76ab3de3.gif?cv=2", "thumbnail_gray": "https://www.mousehuntgame.com/images/items/collectibles/gray/04a6fcdc06c6d40049395ac8d9182fe3.jpg?cv=2"},
+      { "item_id": "1975", "type": "rare_giant_rainbow_treasure_chest_convertible", "name": "Rare Giant Rainbow Treasure Chest", "thumbnail": "https://www.mousehuntgame.com/images/items/convertibles/bcefcda9a9ab1b732c4b56cf76ab3de3.gif?cv=2", "thumbnail_gray": "https://www.mousehuntgame.com/images/items/collectibles/gray/04a6fcdc06c6d40049395ac8d9182fe3.jpg?cv=2"},
       { item_id: '2162', type: 'rare_boss_arduous_treasure_chest_convertible', name: 'Rare Arduous Slayer Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/ca01cc66c88804ff9845e1aeef252463.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/ae1ada8763456ee4ede9bc22b84ce80d.jpg?cv=2' },
       { item_id: '2477', type: 'moussu_picchu_treasure_chest_convertible', name: 'Moussu Picchu Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/088e09fad53ce7138f2b4298774ca9d4.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/3f9645e5d302f8846da008d0dee260bc.jpg?cv=2' },
       { item_id: '2358', type: 'riftstalker_treasure_chest_convertible', name: 'Rift Stalker Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/97a2f51f59db3317183c7492d4789d7a.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/726987d7ea120ffe4be72ade6fa09655.jpg?cv=2' },
@@ -385,7 +385,7 @@
       { item_id: '1747', type: 'catacombs_treasure_chest_convertible', name: 'Acolyte Realm Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/dd23459ac9209c88b525a3694feda9ac.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/c7eb8cb864c71fb8d815f66fb42e27a2.jpg?cv=2' },
       { item_id: '3473', type: 'rare_ff_prelude_treasure_chest_convertible', name: 'Rare Folklore Forest Prelude Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/984f054080de530c62f25fff4e82933a.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/4f80b51f850693185675102c87451003.jpg?cv=2' },
       { item_id: '2848', type: 'chrome_boss_arduous_treasure_chest_convertible', name: 'Arduous Chrome Slayer Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/d06b348388d1d5dbff28690b9d944ab1.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/c63bd45290e57fb85e883e7b23a941ea.jpg?cv=2' },
-      // { "item_id": "1970", "type": "giant_rainbow_treasure_chest_convertible", "name": "Giant Rainbow Treasure Chest", "thumbnail": "https://www.mousehuntgame.com/images/items/convertibles/377eb3e27b0bfad86f883ed17060d329.gif?cv=2", "thumbnail_gray": "https://www.mousehuntgame.com/images/items/collectibles/gray/a4c42ef4d0f03c942f7eb1dfce2ad055.jpg?cv=2" },
+      { item_id: '1970', type: 'giant_rainbow_treasure_chest_convertible', name: 'Giant Rainbow Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/377eb3e27b0bfad86f883ed17060d329.gif?cv=2', "thumbnail_gray": "https://www.mousehuntgame.com/images/items/collectibles/gray/a4c42ef4d0f03c942f7eb1dfce2ad055.jpg?cv=2" },
       { item_id: '2167', type: 'rare_boss_medium_treasure_chest_convertible', name: 'Rare Medium Slayer Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/9194420f8a885441b90421b068da9e72.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/447a696fda55a61e713b77c88cc21682.jpg?cv=2' }
     ], 'special', 'treasure_chests', 'chest', 'Treasure Chests');
   };
@@ -485,16 +485,61 @@
     ], 'special', 'cosmetics', 'airships', 'Airships');
   };
 
-  if ('hunterprofile' === getCurrentPage()) {
+  const addEquipmeny = async () => {
+    addCategoryAndItems([
+      { item_id: '1078', type: 'rift_notes_1_torn_page', name: 'Plankrun\'s Rift Notes 1', thumbnail: 'https://www.mousehuntgame.com/images/items/torn_pages/21bbdce538747cef71d28e4e07510231.gif?cv=2' },
+      { item_id: '161', type: 'dojo_torn_page', name: 'Plankrun\'s Dojo Notes', thumbnail: 'https://www.mousehuntgame.com/images/items/torn_pages/5cb229d483050b5b1f80ec920b59adbb.gif?cv=2' },
+      { item_id: '160', type: 'back_cover_torn_page', name: 'Plankrun\'s Journal Back Cover', thumbnail: 'https://www.mousehuntgame.com/images/items/torn_pages/f35e6a4a74552b97bc0e43319187a57d.gif?cv=2' },
+      { item_id: '1076', type: 'dark_magi_torn_page', name: 'Plankrun\'s Dark Magi Notes', thumbnail: 'https://www.mousehuntgame.com/images/items/torn_pages/f9f9d8271d716103c55926c06dcf01dd.gif?cv=2' },
+      { item_id: '900', type: 'deep_mouse_torn_page', name: 'Plankrun\'s Iceberg Notes', thumbnail: 'https://www.mousehuntgame.com/images/items/torn_pages/8c1b907bb3959747419aa45402482cc4.gif?cv=2' },
+      { item_id: '1077', type: 'king_scarab_torn_page', name: 'Plankrun\'s King Scarab Notes', thumbnail: 'https://www.mousehuntgame.com/images/items/torn_pages/23cd00781604e05a6805e16ee963a9af.gif?cv=2' },
+      { item_id: '1082', type: 'shattered_carmine_2_torn_page', name: 'Plankrun\'s Shattered Carmine Notes 2', thumbnail: 'https://www.mousehuntgame.com/images/items/torn_pages/8e41de778a3c92a32e869f1e144ad00f.gif?cv=2' },
+      { item_id: '1081', type: 'shattered_carmine_1_torn_page', name: 'Plankrun\'s Shattered Carmine Notes 1', thumbnail: 'https://www.mousehuntgame.com/images/items/torn_pages/5b80b091ed0dac56f56c472b25fb1b9c.gif?cv=2' },
+      { item_id: '1079', type: 'rift_notes_2_torn_page', name: 'Plankrun\'s Rift Notes 2', thumbnail: 'https://www.mousehuntgame.com/images/items/torn_pages/f1db0869f17c675712df29f184583b32.gif?cv=2' },
+      { item_id: '1653', type: 'whisker_woods_rift_torn_page', name: 'Plankrun\'s Whisker Woods Rift Notes', thumbnail: 'https://www.mousehuntgame.com/images/items/torn_pages/76c971eb29ba746121ecaaa10c7defb6.gif?cv=2' },
+      { item_id: '1080', type: 'rift_notes_3_torn_page', name: 'Plankrun\'s Rift Notes 3', thumbnail: 'https://www.mousehuntgame.com/images/items/torn_pages/c7d17dcb03c82e224517cc916b2c971a.gif?cv=2' },
+      { item_id: '163', type: 'gnawnia_torn_page', name: 'Plankrun\'s Gnawnia Notes', thumbnail: 'https://www.mousehuntgame.com/images/items/torn_pages/12db753b4cb0fdcdc2cfbbb6b6f9bd06.gif?cv=2' },
+      { item_id: '162', type: 'front_cover_torn_page', name: 'Plankrun\'s Journal Cover', thumbnail: 'https://www.mousehuntgame.com/images/items/torn_pages/bf51e70097f2a8a25d71bc714582a9bd.gif?cv=2' }
+    ], 'plankrun', 'general', 'plankrun', 'Plankrun Pages');
+  };
+
+
+  addStyles(`.hunterProfileItemsView-categoryContent[data-category="plankrun"] .hunterProfileItemsView-categoryContent-item.uncollected,
+  .hunterProfileItemsView-categoryContent[data-category="airships"] .hunterProfileItemsView-categoryContent-item.uncollected,
+  .hunterProfileItemsView-categoryContent[data-category="currency"] .hunterProfileItemsView-categoryContent-item.uncollected {
+    filter: grayscale(100%);
+  }
+  `);
+
+  const addTabs = () => {
     addTreasureChests();
     setTimeout(addPlankrunPages, 500);
     setTimeout(addAirships, 750);
+  };
 
-    addStyles(`.hunterProfileItemsView-categoryContent[data-category="plankrun"] .hunterProfileItemsView-categoryContent-item.uncollected,
-    .hunterProfileItemsView-categoryContent[data-category="airships"] .hunterProfileItemsView-categoryContent-item.uncollected,
-    .hunterProfileItemsView-categoryContent[data-category="currency"] .hunterProfileItemsView-categoryContent-item.uncollected {
-      filter: grayscale(100%);
+  const main = () => {
+    if ('hunterprofile' !== getCurrentPage()) {
+      return;
     }
-    `);
-  }
+
+    const itemTab = document.querySelector('.mousehuntHud-page-tabHeader.items');
+    if (! itemTab) {
+      return;
+    }
+
+    // remove the onclick attribute from the tab
+    itemTab.removeAttribute('onclick');
+    // add a click listener to the tab
+    itemTab.addEventListener('click', () => {
+      hg.utils.PageUtil.onclickPageTabHandler(itemTab);
+      addTabs();
+    });
+
+    if ( 'items' === getCurrentTab()) {
+      addTabs();
+    }
+  };
+
+  main();
+  onPageChange({ profile: main });
 }());
