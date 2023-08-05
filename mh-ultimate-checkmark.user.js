@@ -16,7 +16,7 @@
   'use strict';
 
   const getItems = async (required, queryTab, queryTag, allItems = []) => {
-    if (! allItems.length) {
+    if (!allItems.length) {
       const inventoryData = await doRequest(
         'managers/ajax/pages/page.php',
         {
@@ -29,22 +29,22 @@
 
       // Find the inventoryData.page.tabs array item that has type=special
       const specialTab = inventoryData.page.tabs.find((tab) => queryTab === tab.type);
-      if (! specialTab || ! specialTab.subtabs || ! specialTab.subtabs.length || ! specialTab.subtabs[ 0 ].tags) {
+      if (!specialTab || !specialTab.subtabs || !specialTab.subtabs.length || !specialTab.subtabs[0].tags) {
         return [];
       }
 
-      const owned = specialTab.subtabs[ 0 ].tags.filter((tag) => queryTag === tag.type);
-      if (! owned || ! owned.length || ! owned[ 0 ].items) {
+      const owned = specialTab.subtabs[0].tags.filter((tag) => queryTag === tag.type);
+      if (!owned || !owned.length || !owned[0].items) {
         return [];
       }
 
-      allItems = owned[ 0 ].items;
+      allItems = owned[0].items;
     }
 
     // Merge the required allItems with the owned allItems
     required.forEach((requiredItem) => {
       const ownedItem = allItems.find((i) => i.type === requiredItem.type);
-      if (! ownedItem) {
+      if (!ownedItem) {
         allItems.push(requiredItem);
       }
     });
@@ -59,7 +59,7 @@
         thumbnail: item.thumbnail_gray || item.thumbnail, /* eslint-disable-line camelcase */
         quantity: item.quantity || 0,
         quantity_formatted: item.quantity_formatted || '0', /* eslint-disable-line camelcase */
-        le: ! requiredItem,
+        le: !requiredItem,
       };
     });
 
@@ -86,7 +86,7 @@
         return;
       }
 
-      if (! item.le) {
+      if (!item.le) {
         requiredCompleted++;
       } else if (item.le) {
         le++;
@@ -119,7 +119,7 @@
     }
 
     const sidebar = document.querySelector('.hunterProfileItemsView-directory');
-    if (! sidebar) {
+    if (!sidebar) {
       return;
     }
 
@@ -216,13 +216,8 @@
   };
 
   const makeContent = (id, name, items, completed) => {
-    const exists = document.querySelector(`.hunterProfileItemsView-categoryContent[data-category="${id}"]`);
-    if (exists) {
-      return;
-    }
-
     const content = document.querySelector('.hunterProfileItemsView-content-padding');
-    if (! content) {
+    if (!content) {
       return;
     }
 
