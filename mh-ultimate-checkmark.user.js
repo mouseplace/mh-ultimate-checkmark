@@ -16,7 +16,7 @@
   'use strict';
 
   const getItems = async (required, queryTab, queryTag, allItems = []) => {
-    if (!allItems.length) {
+    if (! allItems.length) {
       const inventoryData = await doRequest(
         'managers/ajax/pages/page.php',
         {
@@ -29,12 +29,12 @@
 
       // Find the inventoryData.page.tabs array item that has type=special
       const specialTab = inventoryData.page.tabs.find((tab) => queryTab === tab.type);
-      if (!specialTab || !specialTab.subtabs || !specialTab.subtabs.length || !specialTab.subtabs[0].tags) {
+      if (! specialTab || ! specialTab.subtabs || ! specialTab.subtabs.length || ! specialTab.subtabs[0].tags) {
         return [];
       }
 
       const owned = specialTab.subtabs[0].tags.filter((tag) => queryTag === tag.type);
-      if (!owned || !owned.length || !owned[0].items) {
+      if (! owned || ! owned.length || ! owned[0].items) {
         return [];
       }
 
@@ -44,7 +44,7 @@
     // Merge the required allItems with the owned allItems
     required.forEach((requiredItem) => {
       const ownedItem = allItems.find((i) => i.type === requiredItem.type);
-      if (!ownedItem) {
+      if (! ownedItem) {
         allItems.push(requiredItem);
       }
     });
@@ -59,7 +59,7 @@
         thumbnail: item.thumbnail_gray || item.thumbnail, /* eslint-disable-line camelcase */
         quantity: item.quantity || 0,
         quantity_formatted: item.quantity_formatted || '0', /* eslint-disable-line camelcase */
-        le: !requiredItem,
+        le: ! requiredItem,
       };
     });
 
@@ -86,7 +86,7 @@
         return;
       }
 
-      if (!item.le) {
+      if (! item.le) {
         requiredCompleted++;
       } else if (item.le) {
         le++;
@@ -119,7 +119,7 @@
     }
 
     const sidebar = document.querySelector('.hunterProfileItemsView-directory');
-    if (!sidebar) {
+    if (! sidebar) {
       return;
     }
 
@@ -217,7 +217,7 @@
 
   const makeContent = (id, name, items, completed) => {
     const content = document.querySelector('.hunterProfileItemsView-content-padding');
-    if (!content) {
+    if (! content) {
       return;
     }
 
@@ -326,7 +326,7 @@
       { item_id: '1762', type: 'living_garden_treasure_chest_f_convertible', name: 'Living Garden Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/8daa67ef7fba125eaa0b098d682bb7a8.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/f23dc73c1dd1f563c602f477c0a480ed.jpg?cv=2' },
       { item_id: '2375', type: 'chrome_elite_treasure_chest_convertible', name: 'Elite Chrome Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/043d5183550d5b643f3ebdda5ef3a7e0.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/313df1e311b4f82a4bc06e488c73a8d3.jpg?cv=2' },
       { item_id: '1774', type: 'rare_gnawnia_treasure_chest_convertible', name: 'Rare Gnawnia Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/23ba20f4e3efa129697f87b3fd776500.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/23e02c08a04bf8b1b8a724b36c1056a0.jpg?cv=2' },
-      { item_id: '1975', type: 'rare_giant_rainbow_treasure_chest_convertible', 'name': 'Rare Giant Rainbow Treasure Chest', "thumbnail": "https://www.mousehuntgame.com/images/items/convertibles/bcefcda9a9ab1b732c4b56cf76ab3de3.gif?cv=2", "thumbnail_gray": "https://www.mousehuntgame.com/images/items/collectibles/gray/04a6fcdc06c6d40049395ac8d9182fe3.jpg?cv=2" },
+      { item_id: '1975', type: 'rare_giant_rainbow_treasure_chest_convertible', name: 'Rare Giant Rainbow Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/bcefcda9a9ab1b732c4b56cf76ab3de3.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/04a6fcdc06c6d40049395ac8d9182fe3.jpg?cv=2' },
       { item_id: '2162', type: 'rare_boss_arduous_treasure_chest_convertible', name: 'Rare Arduous Slayer Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/ca01cc66c88804ff9845e1aeef252463.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/ae1ada8763456ee4ede9bc22b84ce80d.jpg?cv=2' },
       { item_id: '2477', type: 'moussu_picchu_treasure_chest_convertible', name: 'Moussu Picchu Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/088e09fad53ce7138f2b4298774ca9d4.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/3f9645e5d302f8846da008d0dee260bc.jpg?cv=2' },
       { item_id: '2358', type: 'riftstalker_treasure_chest_convertible', name: 'Rift Stalker Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/97a2f51f59db3317183c7492d4789d7a.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/726987d7ea120ffe4be72ade6fa09655.jpg?cv=2' },
@@ -398,10 +398,10 @@
       { item_id: '1747', type: 'catacombs_treasure_chest_convertible', name: 'Acolyte Realm Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/dd23459ac9209c88b525a3694feda9ac.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/c7eb8cb864c71fb8d815f66fb42e27a2.jpg?cv=2' },
       { item_id: '3473', type: 'rare_ff_prelude_treasure_chest_convertible', name: 'Rare Folklore Forest Prelude Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/984f054080de530c62f25fff4e82933a.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/4f80b51f850693185675102c87451003.jpg?cv=2' },
       { item_id: '2848', type: 'chrome_boss_arduous_treasure_chest_convertible', name: 'Arduous Chrome Slayer Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/d06b348388d1d5dbff28690b9d944ab1.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/c63bd45290e57fb85e883e7b23a941ea.jpg?cv=2' },
-      { item_id: '1970', type: 'giant_rainbow_treasure_chest_convertible', name: 'Giant Rainbow Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/377eb3e27b0bfad86f883ed17060d329.gif?cv=2', "thumbnail_gray": "https://www.mousehuntgame.com/images/items/collectibles/gray/a4c42ef4d0f03c942f7eb1dfce2ad055.jpg?cv=2" },
-      { item_id: '2167', type: 'rare_boss_medium_treasure_chest_convertible', name: 'Rare Medium Slayer Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/9194420f8a885441b90421b068da9e72.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/447a696fda55a61e713b77c88cc21682.jpg?cv=2' }
+      { item_id: '1970', type: 'giant_rainbow_treasure_chest_convertible', name: 'Giant Rainbow Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/377eb3e27b0bfad86f883ed17060d329.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/a4c42ef4d0f03c942f7eb1dfce2ad055.jpg?cv=2' },
+      { item_id: '2167', type: 'rare_boss_medium_treasure_chest_convertible', name: 'Rare Medium Slayer Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/9194420f8a885441b90421b068da9e72.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/447a696fda55a61e713b77c88cc21682.jpg?cv=2' },
       { item_id: '3611', type: 'beanstalk_treasure_chest_convertible', name: 'Bountiful Beanstalk Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/3faa925e04006aa7cc7aad7f1d24008d.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/f2af11cf591b11dbf571c14cb415cc48.jpg?cv=2' },
-      { item_id: '3614', type: 'rare_beanstalk_treasure_chest_convertible', name: 'Rare Bountiful Beanstalk Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/69339eb720246c6bdb52c9ed69c61153.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/fcabbb74823de7e0550767d7b19aab64.jpg?cv=2' },
+      { item_id: '3614', type: 'rare_beanstalk_treasure_chest_convertible', name: 'Rare Bountiful Beanstalk Treasure Chest', thumbnail: 'https://www.mousehuntgame.com/images/items/convertibles/69339eb720246c6bdb52c9ed69c61153.gif?cv=2', thumbnail_gray: 'https://www.mousehuntgame.com/images/items/collectibles/gray/fcabbb74823de7e0550767d7b19aab64.jpg?cv=2' }
     ], 'special', 'treasure_chests', 'chest', 'Treasure Chests');
   };
 
@@ -500,93 +500,85 @@
     ], 'special', 'cosmetics', 'airships', 'Airships');
   };
 
-  const addSEH = async () => {
-    addCategoryAndItems([
-      {
-      }
-    ], 'special', 'spring_hunt', 'egg', 'Spring Egg Hunt');
-  };
-
   const addEquipment = async () => {
     addCategoryAndItems([
-      { "item_id": 2334, "type": "rift_hourglass_stat_item", "name": "Ancient Hourglass", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/86006a5a583e0b510c2d956ceb2aa9ba.png?cv=2" },
-      { "item_id": 3418, "type": "chrome_codex_stat_item", "name": "Chrome Codex", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/9e93cfb618d3bfd87661d8ff8f099052.png?cv=2" },
-      { "item_id": 2888, "type": "codex_of_valor_bard_page_stat_item", "name": "Codex of Valour: Bard Page", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/3c483f6680a30026e7107df802d1f4ce.png?cv=2" },
-      { "item_id": 2889, "type": "codex_of_valor_dust_page_stat_item", "name": "Codex of Valour: Dusty Page", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/c983a0437e2409b0a2296cb5f9809ef3.png?cv=2" },
-      { "item_id": 2890, "type": "codex_of_valor_eclipse_page_stat_item", "name": "Codex of Valour: Eclipse Page", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/5dde79954a905480572d954a3bff3208.png?cv=2" },
-      { "item_id": 2891, "type": "codex_of_valor_magic_page_stat_item", "name": "Codex of Valour: Magic Page", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/79f69339aa1bca5c678ea754424052fe.png?cv=2" },
-      { "item_id": 2892, "type": "codex_of_valor_melee_page_stat_item", "name": "Codex of Valour: Melee Page", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/648da7cd68ec4cdebaa4244df0716c7f.png?cv=2" },
-      { "item_id": 2893, "type": "codex_of_valor_nobility_page_stat_item", "name": "Codex of Valour: Noble Page", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/8d0b3fe7261c8d121c302992ebe8ebae.png?cv=2" },
-      { "item_id": 2894, "type": "codex_of_valor_puppetry_page_stat_item", "name": "Codex of Valour: Puppetry Page", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/cff33d01270826ccd4e619b6e969184e.png?cv=2" },
-      { "item_id": 2895, "type": "codex_of_valor_thievery_page_stat_item", "name": "Codex of Valour: Thievery Page", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/5acc2cc5a1594204bf91fda1b2e416cb.png?cv=2" },
-      { "item_id": 2426, "type": "moussu_picchu_fealty_stat_item", "name": "Climbing Boots of Fealty", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/95fb3ea7e1ed68bea4393b968279ea4b.png?cv=2" },
-      { "item_id": 2428, "type": "moussu_picchu_tech_stat_item", "name": "Climbing Grapnel of Tech", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/01db012fdbc68b151f913c29133d77ca.png?cv=2" },
-      { "item_id": 2427, "type": "moussu_picchu_scholar_stat_item", "name": "Climbing Vine of Scholars", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/a708b8b126f67a55f509dba142aef998.png?cv=2" },
-      { "item_id": 889, "type": "iceberg_drill_level_four_stat_item", "name": "Diamond Ice Drill", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/7ae345b6f2bde9a47e662b6a750d627c.gif?cv=2" },
-      { "item_id": 3271, "type": "empyrean_codex_stat_item", "name": "Empyrean Codex", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/5392f862aaed731800d8bee0c8094395.png?cv=2" },
-      { "item_id": 3255, "type": "high_altitude_license_stat_item", "name": "High Altitude Flight License", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/a672ac78ebc5db9c51a0aa356fc6b3c0.png?cv=2" },
-      { "item_id": 890, "type": "iceberg_drill_level_one_stat_item", "name": "Ice Drill Mk. I", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/61e2718c5a6f5e092c89bb9620d1c6e9.gif?cv=2" },
-      { "item_id": 892, "type": "iceberg_drill_level_two_stat_item", "name": "Ice Drill Mk. II", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/e703b61f46f71e7823c11d883aa2b887.gif?cv=2" },
-      { "item_id": 891, "type": "iceberg_drill_level_three_stat_item", "name": "Ice Drill Mk. III", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/01ef6c31b2cd160f1bf49868cae51d02.gif?cv=2" },
-      { "item_id": 1912, "type": "labyrinth_lantern", "name": "Labyrinth Lantern", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/d1c4774c7afebe379bef83d30b81f069.png?cv=2" },
-      { "item_id": 1334, "type": "large_waste_barrel_stat_item", "name": "Large Refining Barrel", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/fc76ba2c71538601379542e747e2e581.png?cv=2" },
-      { "item_id": 1546, "type": "null_gauntlet_stat_item", "name": "Null Gauntlet", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/31165dbf6b6db915f6973f44b251f866.png?cv=2" },
-      { "item_id": 1525, "type": "marketplace_sell_regal_display_case_collectible", "name": "Regal Marketplace Display Case", "thumbnail": "https://www.mousehuntgame.com/images/items/collectibles/762c3b06c27fc0469728e200a66a4ecf.jpg?cv=2" },
-      { "item_id": 1524, "type": "marketplace_buy_regal_stool_collectible", "name": "Regal Marketplace Stool", "thumbnail": "https://www.mousehuntgame.com/images/items/collectibles/c85a2f3dee19e25eb27e1cbba052e256.jpg?cv=2" },
-      { "item_id": 2880, "type": "rift_chronometer_stat_item", "name": "Rift Chronometer", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/210796b9e766d0c2e3f5133446b3f874.png?cv=2" },
-      { "item_id": 2335, "type": "rift_luck_codex_stat_item", "name": "Riftstalker Codex", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/5aac08c099e23916f710c99f7817c89a.png?cv=2" },
-      { "item_id": 528, "type": "desert_warpath_victory_stat_item", "name": "Warpath Victory", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/85fdfa73d10ab54dd0ff5262502a0ebc.gif?cv=2" },
+      { item_id: 2334, type: 'rift_hourglass_stat_item', name: 'Ancient Hourglass', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/86006a5a583e0b510c2d956ceb2aa9ba.png?cv=2' },
+      { item_id: 3418, type: 'chrome_codex_stat_item', name: 'Chrome Codex', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/9e93cfb618d3bfd87661d8ff8f099052.png?cv=2' },
+      { item_id: 2888, type: 'codex_of_valor_bard_page_stat_item', name: 'Codex of Valour: Bard Page', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/3c483f6680a30026e7107df802d1f4ce.png?cv=2' },
+      { item_id: 2889, type: 'codex_of_valor_dust_page_stat_item', name: 'Codex of Valour: Dusty Page', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/c983a0437e2409b0a2296cb5f9809ef3.png?cv=2' },
+      { item_id: 2890, type: 'codex_of_valor_eclipse_page_stat_item', name: 'Codex of Valour: Eclipse Page', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/5dde79954a905480572d954a3bff3208.png?cv=2' },
+      { item_id: 2891, type: 'codex_of_valor_magic_page_stat_item', name: 'Codex of Valour: Magic Page', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/79f69339aa1bca5c678ea754424052fe.png?cv=2' },
+      { item_id: 2892, type: 'codex_of_valor_melee_page_stat_item', name: 'Codex of Valour: Melee Page', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/648da7cd68ec4cdebaa4244df0716c7f.png?cv=2' },
+      { item_id: 2893, type: 'codex_of_valor_nobility_page_stat_item', name: 'Codex of Valour: Noble Page', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/8d0b3fe7261c8d121c302992ebe8ebae.png?cv=2' },
+      { item_id: 2894, type: 'codex_of_valor_puppetry_page_stat_item', name: 'Codex of Valour: Puppetry Page', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/cff33d01270826ccd4e619b6e969184e.png?cv=2' },
+      { item_id: 2895, type: 'codex_of_valor_thievery_page_stat_item', name: 'Codex of Valour: Thievery Page', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/5acc2cc5a1594204bf91fda1b2e416cb.png?cv=2' },
+      { item_id: 2426, type: 'moussu_picchu_fealty_stat_item', name: 'Climbing Boots of Fealty', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/95fb3ea7e1ed68bea4393b968279ea4b.png?cv=2' },
+      { item_id: 2428, type: 'moussu_picchu_tech_stat_item', name: 'Climbing Grapnel of Tech', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/01db012fdbc68b151f913c29133d77ca.png?cv=2' },
+      { item_id: 2427, type: 'moussu_picchu_scholar_stat_item', name: 'Climbing Vine of Scholars', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/a708b8b126f67a55f509dba142aef998.png?cv=2' },
+      { item_id: 889, type: 'iceberg_drill_level_four_stat_item', name: 'Diamond Ice Drill', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/7ae345b6f2bde9a47e662b6a750d627c.gif?cv=2' },
+      { item_id: 3271, type: 'empyrean_codex_stat_item', name: 'Empyrean Codex', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/5392f862aaed731800d8bee0c8094395.png?cv=2' },
+      { item_id: 3255, type: 'high_altitude_license_stat_item', name: 'High Altitude Flight License', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/a672ac78ebc5db9c51a0aa356fc6b3c0.png?cv=2' },
+      { item_id: 890, type: 'iceberg_drill_level_one_stat_item', name: 'Ice Drill Mk. I', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/61e2718c5a6f5e092c89bb9620d1c6e9.gif?cv=2' },
+      { item_id: 892, type: 'iceberg_drill_level_two_stat_item', name: 'Ice Drill Mk. II', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/e703b61f46f71e7823c11d883aa2b887.gif?cv=2' },
+      { item_id: 891, type: 'iceberg_drill_level_three_stat_item', name: 'Ice Drill Mk. III', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/01ef6c31b2cd160f1bf49868cae51d02.gif?cv=2' },
+      { item_id: 1912, type: 'labyrinth_lantern', name: 'Labyrinth Lantern', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/d1c4774c7afebe379bef83d30b81f069.png?cv=2' },
+      { item_id: 1334, type: 'large_waste_barrel_stat_item', name: 'Large Refining Barrel', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/fc76ba2c71538601379542e747e2e581.png?cv=2' },
+      { item_id: 1546, type: 'null_gauntlet_stat_item', name: 'Null Gauntlet', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/31165dbf6b6db915f6973f44b251f866.png?cv=2' },
+      { item_id: 1525, type: 'marketplace_sell_regal_display_case_collectible', name: 'Regal Marketplace Display Case', thumbnail: 'https://www.mousehuntgame.com/images/items/collectibles/762c3b06c27fc0469728e200a66a4ecf.jpg?cv=2' },
+      { item_id: 1524, type: 'marketplace_buy_regal_stool_collectible', name: 'Regal Marketplace Stool', thumbnail: 'https://www.mousehuntgame.com/images/items/collectibles/c85a2f3dee19e25eb27e1cbba052e256.jpg?cv=2' },
+      { item_id: 2880, type: 'rift_chronometer_stat_item', name: 'Rift Chronometer', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/210796b9e766d0c2e3f5133446b3f874.png?cv=2' },
+      { item_id: 2335, type: 'rift_luck_codex_stat_item', name: 'Riftstalker Codex', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/5aac08c099e23916f710c99f7817c89a.png?cv=2' },
+      { item_id: 528, type: 'desert_warpath_victory_stat_item', name: 'Warpath Victory', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/85fdfa73d10ab54dd0ff5262502a0ebc.gif?cv=2' },
     ], 'special', 'equipment', 'equipment', 'Equipment');
   };
 
   const addCurrency = () => {
     addCategoryAndItems([
-      { "item_id": 2837, "type": "amber_queso_stat_item", "name": "Solidified Amber Queso", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/2c9ee9d04b52417619c801bbd739d8bd.png?cv=2" },
-      { "item_id": 2217, "type": "blood_stone_stat_item", "name": "Bloodstone", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/0d56bbd0ac94ef0889eacd7c527981cd.png?cv=2" },
-      { "item_id": 3071, "type": "cloudstone_bangle_stat_item", "name": "Cloudstone Bangle", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/8d1699fd300627b4915408b8c8fae60f.png?cv=2" },
-      { "item_id": 3448, "type": "crop_coin_stat_item", "name": "Crop Coin", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/d684728c0097e077c32ea0ecb211a542.png?cv=2" },
-      { "item_id": 2459, "type": "cursed_gold_stat_item", "name": "Cursed Gold", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/5954fd7a6c2d880ba4e533c35223b2cf.png?cv=2" },
-      { "item_id": 2218, "type": "dawn_dust_stat_item", "name": "Dawn Dust", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/2f8b7e0490ccb116b0a12598314705c0.png?cv=2" },
-      { "item_id": 887, "type": "diamond_ice_drill_tip_stat_item", "name": "Diamond Drill Bits", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/2aa7b95c589e5c0deacc3d225a592d61.gif?cv=2" },
-      { "item_id": 2219, "type": "droid_bird_stat_item", "name": "Animatronic Bird", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/a6daf326f639ef94cbde88c13fda5945.png?cv=2" },
-      { "item_id": 3272, "type": "empyrean_seal_stat_item", "name": "Empyrean Seal", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/a53a5b3c32ff2c56ad8b5b0dba86a48e.png?cv=2" },
-      { "item_id": 3072, "type": "enchanted_wing_stat_item", "name": "Enchanted Wing", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/1de12fa4180e565837d6195988c79dfc.png?cv=2" },
-      { "item_id": 3075, "type": "floating_trap_upgrade_stat_item", "name": "Adorned Empyrean Jewel", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/2f116b49f7aebb66942a4785c86ec984.png?cv=2" },
-      { "item_id": 1528, "type": "flour_stat_item", "name": "Packet of Flour", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/4df00c7d4fb8f7e8dab472b7d58e412a.png?cv=2" },
-      { "item_id": 1175, "type": "fools_gold_stat_item", "name": "Fool's Gold", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/f5d48b654963d5ec7e843343f6ea3848.png?cv=2" },
-      { "item_id": 2897, "type": "gauntlet_elixir_stat_item", "name": "Gauntlet Elixir", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/cea165ab2742a404d120ea18da067d90.png?cv=2" },
-      { "item_id": 2936, "type": "gilded_coin_stat_item", "name": "Gilded Coin", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/227dd930ce5f7e2f0990bfc1c37564af.png?cv=2" },
-      { "item_id": 3449, "type": "gnawbel_prize_stat_item", "name": "Gnawbel Prize for Literature", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/8767d5e6f8ed5f4d2a66ae605b545a3f.png?cv=2" },
-      { "item_id": 2221, "type": "howlite_stat_item", "name": "Howlite", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/c80c6c321bf149e24dfd21a95524270a.png?cv=2" },
-      { "item_id": 2838, "type": "hydro_geyser_trap_stat_item", "name": "Queso Thermal Spring", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/209ca347c42ff56071ddd50f087a5bb8.png?cv=2" },
-      { "item_id": 2839, "type": "magic_cork_dust_stat_item", "name": "Magic Nest Dust", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/064127d4a56d4bc22901fed58ea9e58f.png?cv=2" },
-      { "item_id": 2618, "type": "nachore_stat_item", "name": "Nachore", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/2df50ade4901b247c3a7dc53decc6c02.png?cv=2" },
-      { "item_id": 2840, "type": "physical_geyser_trap_stat_item", "name": "Geyser Smolder Stone", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/d9e49c728a60992e07a576fb228153d4.png?cv=2" },
-      { "item_id": 3453, "type": "pond_penny_stat_item", "name": "Pond Penny", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/0d9c27478f6e2a38f683da6ff0d274bd.png?cv=2" },
-      { "item_id": 420, "type": "prize_credit_stat_item", "name": "King's Credit", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/3409eacfb04b14c822cc263137fe1a6b.png?cv=2" },
-      { "item_id": 3273, "type": "raw_ancient_jade_stat_item", "name": "Raw Ancient Jade", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/9ada7e603f735bfe5aa0831d98a05828.png?cv=2" },
-      { "item_id": 1421, "type": "raw_rift_crystal_stat_item", "name": "Raw Rift Crystal", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/e0119c38af3e1fb9b11f7bf2c9fe5e9b.png?cv=2" },
-      { "item_id": 1547, "type": "rift_circuitry_stat_item", "name": "Rift Circuitry", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/c4a04d04f282d818a9d63c4c9b7e3c02.png?cv=2" },
-      { "item_id": 2332, "type": "rift_clockwork_cog_stat_item", "name": "Clockwork Cog", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/21f96481feb237aca6c2b326b0b935f3.png?cv=2" },
-      { "item_id": 2898, "type": "rift_gaunt_upgrade_a_stat_item", "name": "Tower Sigil", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/162bc786237b82ee70fb42c254a8ce33.png?cv=2" },
-      { "item_id": 2899, "type": "rift_gaunt_upgrade_b_stat_item", "name": "Tower Secrets", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/b177168eeec7d2c8c510b56f969cd8a4.png?cv=2" },
-      { "item_id": 2339, "type": "rift_sprocket_stat_item", "name": "Tiny Sprocket", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/ca9ef31f3109d810916b5fbf0f70271a.png?cv=2" },
-      { "item_id": 1511, "type": "sand_dollar_stat_item", "name": "Sand Dollar", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/8bac8cfe92d6d835428639e1720b40dd.png?cv=2" },
-      { "item_id": 2901, "type": "shade_eclipse_resource_stat_item", "name": "Fragment of the Eclipse", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/8337f28a7c4a1e6d6dc5d43c55b4075f.png?cv=2" },
-      { "item_id": 2222, "type": "silver_bolt_stat_item", "name": "Silver Bolt", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/b9be730eb5bc9e9dd3e6d9c2143511f2.png?cv=2" },
-      { "item_id": 3076, "type": "sky_pirate_seal_stat_item", "name": "Sky Pirate Seal", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/e6734b18dcb823ab8799d7a794094048.png?cv=2" },
-      { "item_id": 3078, "type": "sky_sprocket_stat_item", "name": "Sky Sprocket", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/8f8b74266abe018c969275d019d87603.png?cv=2" },
-      { "item_id": 3079, "type": "skysoft_silk_stat_item", "name": "Skysoft Silk", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/f00a417b8dc3330a07d43a420b7e8cbc.png?cv=2" },
-      { "item_id": 2841, "type": "tactical_geyser_trap_stat_item", "name": "Thermal Chisel", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/180ffc5a84b80a5fc0f954244dfcca34.png?cv=2" },
-      { "item_id": 2902, "type": "tattered_celestial_skin_pattern_stat_item", "name": "Tattered Celestial Skin Pattern", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/222dda35ce2389c414b409e3c9a18f3c.png?cv=2" },
-      { "item_id": 2340, "type": "temporal_rune_stat_item", "name": "Timesplit Rune", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/817a5d8a4a8977d5fd2d6bfa8cfa3ffa.png?cv=2" },
-      { "item_id": 2903, "type": "total_eclipse_resource_stat_item", "name": "Core of the Eclipse", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/5867a5e073b34417aa0a85435f322782.png?cv=2" },
-      { "item_id": 1247, "type": "tournament_token_mega_stat_item", "name": "MEGA Tournament Token", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/transparent_thumb/7d7fede08c84c3d2f6b9216d8ec188e4.png?cv=2" },
-      { "item_id": 686, "type": "tournament_token_stat_item", "name": "Tournament Token", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/3f9a85833d0bd665ecfa7a611b4001c3.gif?cv=2" },
-      { "item_id": 854, "type": "war_scrap_stat_item", "name": "War Scrap", "thumbnail": "https://www.mousehuntgame.com/images/items/stats/931a03134475b7df6350a2b059b5c8e7.gif?cv=2" },
+      { item_id: 2837, type: 'amber_queso_stat_item', name: 'Solidified Amber Queso', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/2c9ee9d04b52417619c801bbd739d8bd.png?cv=2' },
+      { item_id: 2217, type: 'blood_stone_stat_item', name: 'Bloodstone', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/0d56bbd0ac94ef0889eacd7c527981cd.png?cv=2' },
+      { item_id: 3071, type: 'cloudstone_bangle_stat_item', name: 'Cloudstone Bangle', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/8d1699fd300627b4915408b8c8fae60f.png?cv=2' },
+      { item_id: 3448, type: 'crop_coin_stat_item', name: 'Crop Coin', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/d684728c0097e077c32ea0ecb211a542.png?cv=2' },
+      { item_id: 2459, type: 'cursed_gold_stat_item', name: 'Cursed Gold', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/5954fd7a6c2d880ba4e533c35223b2cf.png?cv=2' },
+      { item_id: 2218, type: 'dawn_dust_stat_item', name: 'Dawn Dust', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/2f8b7e0490ccb116b0a12598314705c0.png?cv=2' },
+      { item_id: 887, type: 'diamond_ice_drill_tip_stat_item', name: 'Diamond Drill Bits', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/2aa7b95c589e5c0deacc3d225a592d61.gif?cv=2' },
+      { item_id: 2219, type: 'droid_bird_stat_item', name: 'Animatronic Bird', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/a6daf326f639ef94cbde88c13fda5945.png?cv=2' },
+      { item_id: 3272, type: 'empyrean_seal_stat_item', name: 'Empyrean Seal', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/a53a5b3c32ff2c56ad8b5b0dba86a48e.png?cv=2' },
+      { item_id: 3072, type: 'enchanted_wing_stat_item', name: 'Enchanted Wing', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/1de12fa4180e565837d6195988c79dfc.png?cv=2' },
+      { item_id: 3075, type: 'floating_trap_upgrade_stat_item', name: 'Adorned Empyrean Jewel', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/2f116b49f7aebb66942a4785c86ec984.png?cv=2' },
+      { item_id: 1528, type: 'flour_stat_item', name: 'Packet of Flour', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/4df00c7d4fb8f7e8dab472b7d58e412a.png?cv=2' },
+      { item_id: 1175, type: 'fools_gold_stat_item', name: 'Fool\'s Gold', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/f5d48b654963d5ec7e843343f6ea3848.png?cv=2' },
+      { item_id: 2897, type: 'gauntlet_elixir_stat_item', name: 'Gauntlet Elixir', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/cea165ab2742a404d120ea18da067d90.png?cv=2' },
+      { item_id: 2936, type: 'gilded_coin_stat_item', name: 'Gilded Coin', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/227dd930ce5f7e2f0990bfc1c37564af.png?cv=2' },
+      { item_id: 3449, type: 'gnawbel_prize_stat_item', name: 'Gnawbel Prize for Literature', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/8767d5e6f8ed5f4d2a66ae605b545a3f.png?cv=2' },
+      { item_id: 2221, type: 'howlite_stat_item', name: 'Howlite', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/c80c6c321bf149e24dfd21a95524270a.png?cv=2' },
+      { item_id: 2838, type: 'hydro_geyser_trap_stat_item', name: 'Queso Thermal Spring', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/209ca347c42ff56071ddd50f087a5bb8.png?cv=2' },
+      { item_id: 2839, type: 'magic_cork_dust_stat_item', name: 'Magic Nest Dust', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/064127d4a56d4bc22901fed58ea9e58f.png?cv=2' },
+      { item_id: 2618, type: 'nachore_stat_item', name: 'Nachore', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/2df50ade4901b247c3a7dc53decc6c02.png?cv=2' },
+      { item_id: 2840, type: 'physical_geyser_trap_stat_item', name: 'Geyser Smolder Stone', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/d9e49c728a60992e07a576fb228153d4.png?cv=2' },
+      { item_id: 3453, type: 'pond_penny_stat_item', name: 'Pond Penny', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/0d9c27478f6e2a38f683da6ff0d274bd.png?cv=2' },
+      { item_id: 420, type: 'prize_credit_stat_item', name: 'King\'s Credit', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/3409eacfb04b14c822cc263137fe1a6b.png?cv=2' },
+      { item_id: 3273, type: 'raw_ancient_jade_stat_item', name: 'Raw Ancient Jade', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/9ada7e603f735bfe5aa0831d98a05828.png?cv=2' },
+      { item_id: 1421, type: 'raw_rift_crystal_stat_item', name: 'Raw Rift Crystal', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/e0119c38af3e1fb9b11f7bf2c9fe5e9b.png?cv=2' },
+      { item_id: 1547, type: 'rift_circuitry_stat_item', name: 'Rift Circuitry', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/c4a04d04f282d818a9d63c4c9b7e3c02.png?cv=2' },
+      { item_id: 2332, type: 'rift_clockwork_cog_stat_item', name: 'Clockwork Cog', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/21f96481feb237aca6c2b326b0b935f3.png?cv=2' },
+      { item_id: 2898, type: 'rift_gaunt_upgrade_a_stat_item', name: 'Tower Sigil', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/162bc786237b82ee70fb42c254a8ce33.png?cv=2' },
+      { item_id: 2899, type: 'rift_gaunt_upgrade_b_stat_item', name: 'Tower Secrets', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/b177168eeec7d2c8c510b56f969cd8a4.png?cv=2' },
+      { item_id: 2339, type: 'rift_sprocket_stat_item', name: 'Tiny Sprocket', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/ca9ef31f3109d810916b5fbf0f70271a.png?cv=2' },
+      { item_id: 1511, type: 'sand_dollar_stat_item', name: 'Sand Dollar', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/8bac8cfe92d6d835428639e1720b40dd.png?cv=2' },
+      { item_id: 2901, type: 'shade_eclipse_resource_stat_item', name: 'Fragment of the Eclipse', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/8337f28a7c4a1e6d6dc5d43c55b4075f.png?cv=2' },
+      { item_id: 2222, type: 'silver_bolt_stat_item', name: 'Silver Bolt', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/b9be730eb5bc9e9dd3e6d9c2143511f2.png?cv=2' },
+      { item_id: 3076, type: 'sky_pirate_seal_stat_item', name: 'Sky Pirate Seal', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/e6734b18dcb823ab8799d7a794094048.png?cv=2' },
+      { item_id: 3078, type: 'sky_sprocket_stat_item', name: 'Sky Sprocket', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/8f8b74266abe018c969275d019d87603.png?cv=2' },
+      { item_id: 3079, type: 'skysoft_silk_stat_item', name: 'Skysoft Silk', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/f00a417b8dc3330a07d43a420b7e8cbc.png?cv=2' },
+      { item_id: 2841, type: 'tactical_geyser_trap_stat_item', name: 'Thermal Chisel', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/180ffc5a84b80a5fc0f954244dfcca34.png?cv=2' },
+      { item_id: 2902, type: 'tattered_celestial_skin_pattern_stat_item', name: 'Tattered Celestial Skin Pattern', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/222dda35ce2389c414b409e3c9a18f3c.png?cv=2' },
+      { item_id: 2340, type: 'temporal_rune_stat_item', name: 'Timesplit Rune', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/817a5d8a4a8977d5fd2d6bfa8cfa3ffa.png?cv=2' },
+      { item_id: 2903, type: 'total_eclipse_resource_stat_item', name: 'Core of the Eclipse', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/5867a5e073b34417aa0a85435f322782.png?cv=2' },
+      { item_id: 1247, type: 'tournament_token_mega_stat_item', name: 'MEGA Tournament Token', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/transparent_thumb/7d7fede08c84c3d2f6b9216d8ec188e4.png?cv=2' },
+      { item_id: 686, type: 'tournament_token_stat_item', name: 'Tournament Token', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/3f9a85833d0bd665ecfa7a611b4001c3.gif?cv=2' },
+      { item_id: 854, type: 'war_scrap_stat_item', name: 'War Scrap', thumbnail: 'https://www.mousehuntgame.com/images/items/stats/931a03134475b7df6350a2b059b5c8e7.gif?cv=2' },
     ], 'special', 'currency', 'currency', 'Currency');
   };
-
 
   addStyles(`.hunterProfileItemsView-categoryContent[data-category="chest"] .hunterProfileItemsView-categoryContent-item.uncollected,
   .hunterProfileItemsView-categoryContent[data-category="airships"] .hunterProfileItemsView-categoryContent-item.uncollected,
@@ -601,11 +593,10 @@
   }`);
 
   const main = () => {
-    console.log('main');
     if ('hunterprofile' === getCurrentPage() && 'items' === getCurrentTab()) {
       const params = hg.utils.PageUtil.getQueryParams();
       if (params && params.snuid && user.sn_user_id === params.snuid) {
-        addTreasureChests()
+        addTreasureChests();
         setTimeout(addAirships, 500);
         setTimeout(addCurrency, 1000);
         setTimeout(addEquipment, 1500);
