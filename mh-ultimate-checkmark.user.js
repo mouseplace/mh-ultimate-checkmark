@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ MouseHunt - Ultimate Checkmark
-// @version      1.3.0
+// @version      1.3.1
 // @description  Track your progress towards the "Ultimate Checkmark".
 // @license      MIT
 // @author       bradp
