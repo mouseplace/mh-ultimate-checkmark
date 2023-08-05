@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ MouseHunt - Ultimate Checkmark
-// @version      1.3.1
+// @version      1.3.2
 // @description  Track your progress towards the "Ultimate Checkmark".
 // @license      MIT
 // @author       bradp
@@ -9,7 +9,7 @@
 // @icon         https://i.mouse.rip/mouse.png
 // @grant        none
 // @run-at       document-end
-// @require https://greasyfork.org/scripts/464008-mousehunt-utils-beta/code/%F0%9F%90%AD%EF%B8%8F%20MouseHunt%20Utils%20Beta.js?version=1230556
+// @require      https://cdn.jsdelivr.net/npm/mousehunt-utils@1.7.0/mousehunt-utils.js
 // ==/UserScript==
 
 (function () {
