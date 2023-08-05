@@ -1,8 +1,8 @@
 {
-  "name": "mh-ultimate-checkmark.user",
+  "name": "mh-ultimate-checkmark",
   "version": "1.3.3",
   "description": "",
-  "main": "mh-ultimate-checkmark.user.user.js",
+  "main": "mh-ultimate-checkmark.user.js",
   "scripts": {
     "lint:js": "npx eslint *.js -c .eslintrc.json",
     "lint:js:fix": "npx eslint *.js -c .eslintrc.json --fix",
