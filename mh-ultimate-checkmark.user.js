@@ -235,6 +235,19 @@
 
     const itemsDiv = document.createElement('div');
 
+    // sort the items by name
+    items.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      }
+
+      if (a.name > b.name) {
+        return 1;
+      }
+
+      return 0;
+    });
+
     items.forEach((item) => {
       itemsDiv.appendChild(makeItem(item));
     });
