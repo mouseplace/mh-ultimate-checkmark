@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ MouseHunt - Ultimate Checkmark
-// @version      1.3.2
+// @version      1.3.3
 // @description  Track your progress towards the "Ultimate Checkmark".
 // @license      MIT
 // @author       bradp
@@ -9,7 +9,7 @@
 // @icon         https://i.mouse.rip/mouse.png
 // @grant        none
 // @run-at       document-end
-// @require      https://cdn.jsdelivr.net/npm/mousehunt-utils@1.7.0/mousehunt-utils.js
+// @require      https://cdn.jsdelivr.net/npm/mousehunt-utils@1.7.3/mousehunt-utils.js
 // ==/UserScript==
 
 (function () {
