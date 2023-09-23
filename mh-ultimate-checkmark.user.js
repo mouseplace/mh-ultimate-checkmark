@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ MouseHunt - Ultimate Checkmark
-// @version      1.3.3
+// @version      1.3.4
 // @description  Track your progress towards the "Ultimate Checkmark".
 // @license      MIT
 // @author       bradp
@@ -126,7 +126,7 @@
     const catSidebarCategory = document.createElement('a');
     catSidebarCategory.classList.add('hunterProfileItemsView-category');
     if (progress.checkmark) {
-      catSidebarCategory.classList.add('completed');
+      catSidebarCategory.classList.add('complete');
     }
 
     catSidebarCategory.title = name;
