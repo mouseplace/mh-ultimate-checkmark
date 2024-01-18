@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         🐭️ MouseHunt - Ultimate Checkmark
-// @version      1.3.4
+// @version      1.4.0
 // @description  Track your progress towards the "Ultimate Checkmark".
 // @license      MIT
 // @author       bradp
@@ -10,6 +10,7 @@
 // @grant        none
 // @run-at       document-end
 // @require      https://cdn.jsdelivr.net/npm/mousehunt-utils@1.7.3/mousehunt-utils.js
+// @require      https://cdn.jsdelivr.net/npm/script-migration@1.1.1
 // ==/UserScript==
 
 (function () {
@@ -609,4 +610,6 @@
     page: 'hunterprofile',
     tab: 'items'
   });
+
+  migrateUserscript('🐭️ MouseHunt - Ultimate Checkmark', 'https://greasyfork.org/en/scripts/461469-mousehunt-ultimate-checkmark');
 }());
