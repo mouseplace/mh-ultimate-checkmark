@@ -95,7 +95,7 @@
     });
 
     return {
-      checkmark: requiredCompleted === required.total,
+      checkmark: requiredCompleted === required.length,
       completed: requiredCompleted,
       required: required.length,
       le,
